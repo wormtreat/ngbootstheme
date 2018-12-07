@@ -2,7 +2,26 @@
  * Global application theme.
  * Framework overrides and customization goes here.
  */
-   
+ 
+ //COMPONENTS
+ .progress-bar {
+    box-shadow:0.2rem 0.2rem 0.5rem 0.05rem $gray-700 inset;  
+ }
+
+ .alert {
+    box-shadow:0.2rem 0.2rem 0.3rem 0.05rem $gray-500;
+ }
+
+ .page-item.active .page-link {
+    background-image:-webkit-linear-gradient($blue, $teal, 80%, $purple);
+    background-image:linear-gradient($blue, $teal, 80%, $purple);
+ }
+
+ .page-item .page-link {
+    background-image:-webkit-linear-gradient($gray-400, $gray-200, 80%, $gray-600);
+    background-image:linear-gradient($gray-400, $gray-200, 80%, $gray-600);
+ }
+
 .jumbotron {
     padding-bottom: 1rem;
 }
@@ -23,10 +42,105 @@
     }
 }
 
-// .navbar-collapse:not(.show) {
-//     background:#ee6666;
-// }
+.dropdown-menu {
+    box-shadow: 0.3rem 0.3rem 0.2rem 0.1rem rgba(0, 0, 0, 0.1);
+}
 
+
+//BUTTONS
+.btn {
+    text-shadow: 0.04rem 0.04rem 0 $gray-900, 0.05rem 0.05rem 0.3rem $gray-900;
+    box-shadow: none;
+    background-repeat:no-repeat;
+
+    @include hover {
+        outline:0;
+        outline-offset:0;
+        -webkit-transition:color .5s;
+        transition:color .5s;
+        text-decoration:none;
+        -webkit-animation-duration:.8s;
+        -moz-animation-duration:.8s;
+        -o-animation-duration:.8s;
+        animation-duration:.8s;
+        -webkit-animation-fill-mode:both;
+        -moz-animation-fill-mode:both;
+        -o-animation-fill-mode:both;
+        animation-fill-mode:both;
+        -webkit-animation-name:pulseInvert;
+        -moz-animation-name:pulseInvert;
+        -o-animation-name:pulseInvert;
+        animation-name:pulseInvert;
+    }
+    &:focus {
+        outline:0;
+        outline-offset:0;
+        box-shadow: none;
+    }
+}
+
+.btn-primary {
+    background-image:-webkit-linear-gradient($blue, $teal, 50%, $purple);
+    background-image:linear-gradient($blue, $teal, 50%, $purple);
+    
+    @include hover-focus-active {
+        background-image:-webkit-linear-gradient($gray-100, $blue, 50%, $gray-100);
+        background-image:linear-gradient($gray-100, $blue, 50%, $gray-100);
+    }
+}
+
+.btn-secondary {
+    background-image:-webkit-linear-gradient($gray-600, $gray-200, 50%, $gray-800);
+    background-image:linear-gradient($gray-600, $gray-200, 50%, $gray-800);
+
+    @include hover-focus-active {
+        background-image:-webkit-linear-gradient($gray-100, $gray-600, 50%, $gray-100);
+        background-image:linear-gradient($gray-100, $gray-600, 50%, $gray-100);
+    }
+}
+
+.btn-success {
+    background-image:-webkit-linear-gradient($green, $gray-200, 50%, darken($green, 50%));
+    background-image:linear-gradient($green, $gray-200, 50%, darken($green, 20%));
+
+    @include hover-focus-active {
+        background-image:-webkit-linear-gradient($gray-100, $green, 50%, $gray-100);
+        background-image:linear-gradient($gray-100, $green, 50%, $gray-100);
+    }
+}
+
+.btn-danger {
+    background-image:-webkit-linear-gradient($red, $gray-200, 50%, $red);
+    background-image:linear-gradient($red, $gray-200, 50%, $red);
+    
+    @include hover-focus-active {
+        background-image:-webkit-linear-gradient($gray-100, $red, 50%, $gray-100);
+        background-image:linear-gradient($gray-100, $red, 50%, $gray-100);
+    }
+}
+
+.btn-warning {
+    background-image:-webkit-linear-gradient($yellow, $gray-200, 50%, darken($orange, 20%));
+    background-image:linear-gradient($yellow, $gray-200, 50%, darken($orange, 20%));
+    
+    @include hover-focus-active {
+        background-image:-webkit-linear-gradient($gray-100, $yellow, 50%, $gray-100);
+        background-image:linear-gradient($gray-100, $yellow, 50%, $gray-100);
+    }
+}
+
+.btn-info {
+    background-image:-webkit-linear-gradient($cyan, $gray-200, 50%, darken($cyan, 12%));
+    background-image:linear-gradient($cyan, $gray-200, 50%, darken($cyan, 12%));
+    
+    @include hover-focus-active {
+        background-image:-webkit-linear-gradient($gray-100, $cyan, 50%, $gray-100);
+        background-image:linear-gradient($gray-100, $cyan, 50%, $gray-100);
+    }
+}
+
+
+//RESPONSIVE
 @media (max-width: 768px) {
     .display-3 {
         font-size: 3rem;
@@ -50,3 +164,107 @@
     }
  }
 
+
+ //ANIMATIONS
+@-webkit-keyframes pulseInvert {
+    0% {
+        filter:invert(0);
+        -webkit-filter:invert(0);
+        -moz-filter:invert(0);
+        -o-filter:invert(0);
+        -ms-filter:invert(0)
+    }
+    5% {
+        filter:invert(100%);
+        -webkit-filter:invert(100%);
+        -moz-filter:invert(100%);
+        -o-filter:invert(100%);
+        -ms-filter:invert(100%)
+    }
+    100% {
+        filter:invert(0);
+        -webkit-filter:invert(0);
+        -moz-filter:invert(0);
+        -o-filter:invert(0);
+        -ms-filter:invert(0);
+    }
+}
+
+@-moz-keyframes pulseInvert {
+    0% {
+        filter:invert(0);
+        -webkit-filter:invert(0);
+        -moz-filter:invert(0);
+        -o-filter:invert(0);
+        -ms-filter:invert(0);
+    }
+    5% {
+        filter:invert(100%);
+        -webkit-filter:invert(100%);
+        -moz-filter:invert(100%);
+        -o-filter:invert(100%);
+        -ms-filter:invert(100%)
+    }
+    100% {
+        filter:invert(0);
+        -webkit-filter:invert(0);
+        -moz-filter:invert(0);
+        -o-filter:invert(0);
+        -ms-filter:invert(0); 
+    }
+}
+
+@-o-keyframes pulseInvert {
+    0% {
+        filter:invert(0);
+        -webkit-filter:invert(0);
+        -moz-filter:invert(0);
+        -o-filter:invert(0);
+        -ms-filter:invert(0)
+    }
+    5% {
+        filter:invert(100%);
+        -webkit-filter:invert(100%);
+        -moz-filter:invert(100%);
+        -o-filter:invert(100%);
+        -ms-filter:invert(100%)
+    }
+    100% {
+        filter:invert(0);
+        -webkit-filter:invert(0);
+        -moz-filter:invert(0);
+        -o-filter:invert(0);
+        -ms-filter:invert(0);
+    }
+}
+
+@keyframes pulseInvert {
+    0% {
+        filter:invert(0);
+        -webkit-filter:invert(0);
+        -moz-filter:invert(0);
+        -o-filter:invert(0);
+        -ms-filter:invert(0)
+    }
+    5% {
+        filter:invert(100%);
+        -webkit-filter:invert(100%);
+        -moz-filter:invert(100%);
+        -o-filter:invert(100%);
+        -ms-filter:invert(100%)
+    }
+    100% {
+        filter:invert(0);
+        -webkit-filter:invert(0);
+        -moz-filter:invert(0);
+        -o-filter:invert(0);
+        -ms-filter:invert(0);
+    }
+}
+
+.pulseInvert {
+    -webkit-animation-name:pulseInvert;
+    -moz-animation-name:pulseInvert;
+    -o-animation-name:pulseInvert;
+    animation-name:pulseInvert
+}
