@@ -3,6 +3,40 @@
  * Framework overrides and customization goes here.
  */
 
- .nav-link {
+.nav-link {
     cursor: pointer;
 }
+
+.navbar {
+    padding: 0.2rem 1rem;
+}
+
+.navbar-collapse.show {
+    padding-bottom: 0.5rem; 
+
+    button {
+        margin-top: 0.3rem;
+    }
+}
+
+// .navbar-collapse:not(.show) {
+//     background:#ee6666;
+// }
+
+@media (max-width: 768px) {
+    .display-3 {
+        font-size: 3rem;
+    }
+ }
+
+ @media (max-width: 576px) {
+    .display-3 {
+        font-size: 3rem;
+    }
+
+    .jumbotron {
+        padding: 3rem 1rem;
+        margin-bottom: 0;
+    }
+ }
+
