@@ -4,23 +4,43 @@
  */
  
  //COMPONENTS
- .progress-bar {
-    box-shadow:0.2rem 0.2rem 0.5rem 0.05rem $gray-700 inset;  
- }
 
- .alert {
-    box-shadow:0.2rem 0.2rem 0.3rem 0.05rem $gray-500;
+ body {
+    background: url(assets/primary-bg.svg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
  }
+ 
+.navbar-top {
+    background-color: $purple;
+}
 
- .page-item.active .page-link {
+.progress {
+    border: 0.1rem solid $gray-700;
+    box-shadow: inset 0 0.3rem 0.3rem rgba(0, 0, 0, 0.2);
+}
+
+.progress-bar {
+    box-shadow: inset 0.2rem 0.2rem 0.5rem 0.05rem $gray-700;  
+}
+
+.alert {
+    box-shadow:0.2rem 0.2rem 0.3rem 0.05rem rgba($black, 0.3);
+}
+
+.page-item.active .page-link {
+    text-shadow: 0.04rem 0.04rem 00.04rem $gray-700, 0.05rem 0.05rem 0.8rem $gray-900;
     background-image:-webkit-linear-gradient($blue, $teal, 80%, $purple);
     background-image:linear-gradient($blue, $teal, 80%, $purple);
- }
+}
 
- .page-item .page-link {
+.page-item .page-link {
+    text-shadow: 0.04rem 0.04rem 00.04rem $gray-600;
     background-image:-webkit-linear-gradient($gray-400, $gray-200, 80%, $gray-600);
     background-image:linear-gradient($gray-400, $gray-200, 80%, $gray-600);
- }
+}
 
 .jumbotron {
     padding-bottom: 1rem;
@@ -49,7 +69,7 @@
 
 //BUTTONS
 .btn {
-    text-shadow: 0.04rem 0.04rem 0 $gray-900, 0.05rem 0.05rem 0.3rem $gray-900;
+    text-shadow: 0.04rem 0.04rem 00.04rem $gray-700, 0.05rem 0.05rem 0.8rem $gray-900;
     box-shadow: none;
     background-repeat:no-repeat;
 
@@ -72,73 +92,148 @@
         -o-animation-name:pulseInvert;
         animation-name:pulseInvert;
     }
-    &:focus {
+    
+    @include hover-focus-active {
         outline:0;
         outline-offset:0;
-        box-shadow: none;
+        box-shadow: none !important;
     }
 }
 
+//primary radio buttons
+.btn-primary:not(:disabled):not(.disabled):active, 
+.btn-primary:not(:disabled):not(.disabled).active, 
+.show > .btn-primary.dropdown-toggle {
+    background-image:-webkit-linear-gradient($gray-100, $blue, 50%, $gray-100);
+    background-image:linear-gradient($gray-100, $blue, 50%, $gray-100);
+}
+
 .btn-primary {
+    border: 1px solid darken($blue, 30%);
     background-image:-webkit-linear-gradient($blue, $teal, 50%, $purple);
     background-image:linear-gradient($blue, $teal, 50%, $purple);
     
     @include hover-focus-active {
+        border: 1px solid darken($blue, 30%);
         background-image:-webkit-linear-gradient($gray-100, $blue, 50%, $gray-100);
         background-image:linear-gradient($gray-100, $blue, 50%, $gray-100);
     }
 }
 
 .btn-secondary {
-    background-image:-webkit-linear-gradient($gray-600, $gray-200, 50%, $gray-800);
-    background-image:linear-gradient($gray-600, $gray-200, 50%, $gray-800);
+    border: 1px solid darken($cyan, 30%);
+    background-image:-webkit-linear-gradient(darken($cyan, 15%), $teal, 50%, $gray-800);
+    background-image:linear-gradient(darken($cyan, 15%), $teal, 50%, $gray-800);
 
     @include hover-focus-active {
+        border: 1px solid darken($cyan, 30%);
         background-image:-webkit-linear-gradient($gray-100, $gray-600, 50%, $gray-100);
         background-image:linear-gradient($gray-100, $gray-600, 50%, $gray-100);
     }
 }
 
 .btn-success {
-    background-image:-webkit-linear-gradient($green, $gray-200, 50%, darken($green, 50%));
-    background-image:linear-gradient($green, $gray-200, 50%, darken($green, 20%));
+    border: 1px solid darken($green, 30%);
+    background-image:-webkit-linear-gradient($green, $teal, 50%, darken($green, 50%));
+    background-image:linear-gradient($green, $teal, 50%, darken($green, 20%));
 
     @include hover-focus-active {
+        border: 1px solid darken($green, 30%);
         background-image:-webkit-linear-gradient($gray-100, $green, 50%, $gray-100);
         background-image:linear-gradient($gray-100, $green, 50%, $gray-100);
     }
 }
 
 .btn-danger {
-    background-image:-webkit-linear-gradient($red, $gray-200, 50%, $red);
-    background-image:linear-gradient($red, $gray-200, 50%, $red);
+    border: 1px solid darken($red, 30%);
+    background-image:-webkit-linear-gradient($red, $orange, 50%, darken($red, 12%));
+    background-image:linear-gradient($red, $orange, 50%, darken($red, 12%));
     
     @include hover-focus-active {
+        border: 1px solid darken($red, 30%);
         background-image:-webkit-linear-gradient($gray-100, $red, 50%, $gray-100);
         background-image:linear-gradient($gray-100, $red, 50%, $gray-100);
     }
 }
 
 .btn-warning {
+    border: 1px solid darken($yellow, 30%);
     background-image:-webkit-linear-gradient($yellow, $gray-200, 50%, darken($orange, 20%));
     background-image:linear-gradient($yellow, $gray-200, 50%, darken($orange, 20%));
     
     @include hover-focus-active {
+        border: 1px solid darken($yellow, 30%);
         background-image:-webkit-linear-gradient($gray-100, $yellow, 50%, $gray-100);
         background-image:linear-gradient($gray-100, $yellow, 50%, $gray-100);
     }
 }
 
 .btn-info {
-    background-image:-webkit-linear-gradient($cyan, $gray-200, 50%, darken($cyan, 12%));
-    background-image:linear-gradient($cyan, $gray-200, 50%, darken($cyan, 12%));
+    border: 1px solid darken($cyan, 30%);
+    background-image:-webkit-linear-gradient($cyan, $teal, 50%, darken($cyan, 12%));
+    background-image:linear-gradient($cyan, $teal, 50%, darken($cyan, 12%));
     
     @include hover-focus-active {
+        border: 1px solid darken($cyan, 30%);
         background-image:-webkit-linear-gradient($gray-100, $cyan, 50%, $gray-100);
         background-image:linear-gradient($gray-100, $cyan, 50%, $gray-100);
     }
 }
 
+
+.btn-outline-primary {
+    //text-shadow: 0.04rem 0.04rem 0.04rem $gray-700;
+    @include hover-focus-active {
+        color: $white;
+        background-image:-webkit-linear-gradient($gray-100, $blue, 50%, $gray-100);
+        background-image:linear-gradient($gray-100, $blue, 50%, $gray-100);
+    }
+}
+
+.btn-outline-secondary {
+    //text-shadow: 0.04rem 0.04rem 0.04rem $gray-700;
+    @include hover-focus-active {
+        color: $white;
+        background-image:-webkit-linear-gradient($gray-100, $gray-600, 50%, $gray-100);
+        background-image:linear-gradient($gray-100, $gray-600, 50%, $gray-100);
+    }
+}
+
+.btn-outline-success {
+    //text-shadow: 0.04rem 0.04rem 0.04rem $gray-700;
+    @include hover-focus-active {
+        color: $white;
+        background-image:-webkit-linear-gradient($gray-100, $green, 50%, $gray-100);
+        background-image:linear-gradient($gray-100, $green, 50%, $gray-100);
+    }
+}
+
+.btn-outline-danger {
+    //text-shadow: 0.04rem 0.04rem 0.04rem $gray-700;
+    @include hover-focus-active {
+        color: $white;
+        background-image:-webkit-linear-gradient($gray-100, $red, 50%, $gray-100);
+        background-image:linear-gradient($gray-100, $red, 50%, $gray-100);
+    }
+}
+
+.btn-outline-warning {
+    //text-shadow: 0.04rem 0.04rem 0.04rem $gray-700;
+    @include hover-focus-active {
+        color: $white;
+        background-image:-webkit-linear-gradient($gray-100, $yellow, 50%, $gray-100);
+        background-image:linear-gradient($gray-100, $yellow, 50%, $gray-100);
+    }
+}
+
+.btn-outline-info {
+    //text-shadow: 0.04rem 0.04rem 0.04rem $gray-700;
+    @include hover-focus-active {
+        color: $white;
+        background-image:-webkit-linear-gradient($gray-100, $cyan, 50%, $gray-100);
+        background-image:linear-gradient($gray-100, $cyan, 50%, $gray-100);
+    }
+}
 
 //RESPONSIVE
 @media (max-width: 768px) {
