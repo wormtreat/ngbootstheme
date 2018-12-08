@@ -14,6 +14,10 @@ $fa-font-path: "~@fortawesome/fontawesome-free-webfonts/webfonts";
 //
 // Color system
 //
+// Use Bootstrap defaults for other variables, imported here so we can access all app variables in one place when used
+// in components.
+@import "~bootstrap/scss/_functions";
+@import "~bootstrap/scss/_variables";
 
 $white:  #fff;
 $gray-100: #f8f9fa;
@@ -36,7 +40,7 @@ $orange:  #ff8522;
 $yellow:  #ffd65d;
 $green:   #00d632;
 $teal:    #46ffc7;
-$cyan:    #00ddff;
+$cyan:    #12D5D5;
 
 $theme-colors: (
   primary: $blue,
@@ -52,10 +56,7 @@ $theme-colors: (
 $enable-shadows:    true;
 $enable-gradients:  true;
 
-// Use Bootstrap defaults for other variables, imported here so we can access all app variables in one place when used
-// in components.
-@import "~bootstrap/scss/_functions";
-@import "~bootstrap/scss/_variables";
+
 
 
 $pagination-bg:                     $gray-600;

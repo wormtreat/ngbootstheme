@@ -1,6 +1,5 @@
 /*
  * Global application theme.
- * Framework overrides and customization goes here.
  */
  
 //LAYOUT
@@ -44,8 +43,12 @@ body {
 
 
 //MISC COMPONENTS
+.progress-demo > .progress {
+    margin-bottom: 0.25rem;
+}
+
 .progress {
-    border: 0.1rem solid $gray-700;
+    border: 0.05rem solid $gray-700;
     box-shadow: inset 0 0.3rem 0.3rem rgba(0, 0, 0, 0.2);
 }
 
@@ -64,6 +67,11 @@ body {
     -moz-border-radius: 0;
     -ms-border-radius: 0;
     -o-border-radius: 0;
+    border-bottom: 0.5rem solid $purple;
+
+    h1 {
+        color: $purple;
+    }
 }
 
 hr {
@@ -97,6 +105,70 @@ hr {
 }
 
 
+//COLORS
+.grad-primary {
+    background-image:linear-gradient($blue, $teal, 80%, $purple);
+}
+
+.grad-secondary {
+    background-image:linear-gradient(darken($cyan, 15%), $teal, 50%, $gray-700);
+}
+
+.grad-success {
+    background-image:linear-gradient($green, $teal, 50%, darken($green, 20%));
+}
+
+.grad-danger {
+    background-image:linear-gradient($red, lighten($pink, 10%), 50%, darken($red, 12%));
+}
+
+.grad-warning {
+    background-image:linear-gradient($yellow, $gray-200, 50%, darken($orange, 20%));
+}
+
+.grad-info {
+    background-image:linear-gradient(lighten($cyan, 10%), $teal, 50%, darken($cyan, 10%));
+}
+
+.grad-header {
+    background-image:linear-gradient($blue, $teal, 80%, $purple);
+}
+
+
+//CARDS
+.card-title {
+    text-shadow: 0.06rem 0.06rem 0.05rem rgba(0, 0, 0, 0.4);
+}
+
+.card-header {
+    color: $purple;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    font-weight: 700;
+    background-color: rgb(255, 255, 255);
+    text-shadow: 0.06rem 0.06rem 0.05rem rgba(0, 0, 0, 0.3);
+    background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' 
+    xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h12v6H0V0zm28 8h12v6H28V8zm14-8h12v6H42V0zm14 
+    0h12v6H56V0zm0 8h12v6H56V8zM42 8h12v6H42V8zm0 16h12v6H42v-6zm14-8h12v6H56v-6zm14 0h12v6H70v-6zm0-16h12v6H70V0zM28 
+    32h12v6H28v-6zM14 16h12v6H14v-6zM0 24h12v6H0v-6zm0 8h12v6H0v-6zm14 0h12v6H14v-6zm14 8h12v6H28v-6zm-14 0h12v6H14v-6zm28 
+    0h12v6H42v-6zm14-8h12v6H56v-6zm0-8h12v6H56v-6zm14 8h12v6H70v-6zm0 8h12v6H70v-6zM14 24h12v6H14v-6zm14-8h12v6H28v-6zM14 
+    8h12v6H14V8zM0 8h12v6H0V8z' fill='%2379f6ff' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.card-body {
+    background-image: linear-gradient(0.12turn, 
+    $gray-200 20%, 
+    lighten($cyan, 30%) 80%, 
+    $cyan 93%, $teal 95%);
+}
+
+.card-footer {
+    padding: 0.3rem 0.7rem;
+    background-color: $teal;
+    font-size: 0.8rem;
+}
+
+
 //PAGINATION
 .page-item.active .page-link {
     text-shadow: 0.04rem 0.04rem 00.04rem $gray-700, 0.05rem 0.05rem 0.8rem $gray-900;
@@ -113,7 +185,9 @@ hr {
 
 //BUTTONS
 .btn {
-    text-shadow: 0.04rem 0.04rem 00.04rem $gray-700, 0.05rem 0.05rem 0.8rem $gray-900;
+    text-shadow: 0.04rem 0.04rem 00.04rem $gray-700, 
+    0.05rem 0.05rem 0.8rem $gray-900;
+    
     box-shadow: none;
     background-repeat:no-repeat;
 
@@ -144,6 +218,14 @@ hr {
     }
 }
 
+.btn-link {
+    color: $cyan;
+
+    @include hover-focus-active {
+        color: $yellow;
+    }
+}
+
 //MAIN BUTTONS
 .btn-primary {
     border: 1px solid darken($blue, 20%);
@@ -157,10 +239,18 @@ hr {
     }
 }
 
+//Removes display of base color when button is clicked
+.btn-primary:not(:disabled):not(.disabled):active, 
+.btn-primary:not(:disabled):not(.disabled).active, 
+.show > .btn-primary.dropdown-toggle {
+    background-image:-webkit-linear-gradient($gray-100, $blue, 50%, $gray-100);
+    background-image:linear-gradient($gray-100, $blue, 50%, $gray-100);
+}
+
 .btn-secondary {
     border: 1px solid darken($cyan, 20%);
-    background-image:-webkit-linear-gradient(darken($cyan, 20%), $teal, 50%, darken($cyan, 30%));
-    background-image:linear-gradient(darken($cyan, 20%), $teal, 50%, darken($cyan, 30%));
+    background-image:-webkit-linear-gradient(darken($cyan, 15%), $teal, 50%, $gray-700);
+    background-image:linear-gradient(darken($cyan, 15%), $teal, 50%, $gray-700);
 
     @include hover-focus-active {
         border: 1px solid darken($cyan, 20%);
@@ -207,8 +297,8 @@ hr {
 
 .btn-info {
     border: 1px solid darken($cyan, 20%);
-    background-image:-webkit-linear-gradient($cyan, $teal, 50%, darken($cyan, 12%));
-    background-image:linear-gradient($cyan, $teal, 50%, darken($cyan, 12%));
+    background-image:-webkit-linear-gradient(lighten($cyan, 10%), $teal, 50%, darken($cyan, 10%));
+    background-image:linear-gradient(lighten($cyan, 10%), $teal, 50%, darken($cyan, 10%));
     
     @include hover-focus-active {
         border: 1px solid darken($cyan, 20%);
@@ -219,7 +309,6 @@ hr {
 
 //OUTLINED BUTTONS
 .btn-outline-primary {
-    //text-shadow: 0.04rem 0.04rem 0.04rem $gray-700;
     @include hover-focus-active {
         color: $white;
         background-image:-webkit-linear-gradient($gray-100, $blue, 50%, $gray-100);
@@ -228,7 +317,6 @@ hr {
 }
 
 .btn-outline-secondary {
-    //text-shadow: 0.04rem 0.04rem 0.04rem $gray-700;
     @include hover-focus-active {
         color: $white;
         background-image:-webkit-linear-gradient($gray-100, $gray-600, 50%, $gray-100);
@@ -237,7 +325,6 @@ hr {
 }
 
 .btn-outline-success {
-    //text-shadow: 0.04rem 0.04rem 0.04rem $gray-700;
     @include hover-focus-active {
         color: $white;
         background-image:-webkit-linear-gradient($gray-100, $green, 50%, $gray-100);
@@ -246,7 +333,6 @@ hr {
 }
 
 .btn-outline-danger {
-    //text-shadow: 0.04rem 0.04rem 0.04rem $gray-700;
     @include hover-focus-active {
         color: $white;
         background-image:-webkit-linear-gradient($gray-100, $red, 50%, $gray-100);
@@ -255,7 +341,6 @@ hr {
 }
 
 .btn-outline-warning {
-    //text-shadow: 0.04rem 0.04rem 0.04rem $gray-700;
     @include hover-focus-active {
         color: $white;
         background-image:-webkit-linear-gradient($gray-100, $yellow, 50%, $gray-100);
@@ -264,20 +349,11 @@ hr {
 }
 
 .btn-outline-info {
-    //text-shadow: 0.04rem 0.04rem 0.04rem $gray-700;
     @include hover-focus-active {
         color: $white;
         background-image:-webkit-linear-gradient($gray-100, $cyan, 50%, $gray-100);
         background-image:linear-gradient($gray-100, $cyan, 50%, $gray-100);
     }
-}
-
-//primary radio buttons
-.btn-primary:not(:disabled):not(.disabled):active, 
-.btn-primary:not(:disabled):not(.disabled).active, 
-.show > .btn-primary.dropdown-toggle {
-    background-image:-webkit-linear-gradient($gray-100, $blue, 50%, $gray-100);
-    background-image:linear-gradient($gray-100, $blue, 50%, $gray-100);
 }
 
 
