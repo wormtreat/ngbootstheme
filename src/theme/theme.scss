@@ -2,7 +2,7 @@
  * Global application theme.
  */
  
-//LAYOUT
+//LAYOUT **************************************
 body {
     background: url(assets/primary-bg.svg) no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -42,7 +42,7 @@ body {
 }
 
 
-//MISC COMPONENTS
+//MISC COMPONENTS **************************************
 .progress-demo > .progress {
     margin-bottom: 0.25rem;
 }
@@ -79,7 +79,7 @@ hr {
 }
 
 
-//NAVIGATION
+//NAVIGATION **************************************
 .navbar-top {
     background-color: $purple;
 }
@@ -105,7 +105,7 @@ hr {
 }
 
 
-//COLORS
+//COLORS **************************************
 .grad-primary {
     background-image:linear-gradient($blue, $teal, 80%, $purple);
 }
@@ -135,7 +135,7 @@ hr {
 }
 
 
-//CARDS
+//CARDS **************************************
 .card-title {
     text-shadow: 0.06rem 0.06rem 0.05rem rgba(0, 0, 0, 0.4);
 }
@@ -169,7 +169,7 @@ hr {
 }
 
 
-//PAGINATION
+//PAGINATION **************************************
 .page-item.active .page-link {
     text-shadow: 0.04rem 0.04rem 00.04rem $gray-700, 0.05rem 0.05rem 0.8rem $gray-900;
     background-image:-webkit-linear-gradient($blue, $teal, 80%, $purple);
@@ -183,7 +183,7 @@ hr {
 }
 
 
-//BUTTONS
+//BUTTONS **************************************
 .btn {
     text-shadow: 0.04rem 0.04rem 00.04rem $gray-700, 
     0.05rem 0.05rem 0.8rem $gray-900;
@@ -357,7 +357,13 @@ hr {
 }
 
 
-//RESPONSIVE
+//RESPONSIVE **************************************
+@media (min-width: 768px) and (max-width: 939px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
 @media (max-width: 768px) {
     .display-3 {
         font-size: 3rem;
@@ -367,9 +373,9 @@ hr {
         margin-bottom: 0.5rem;
         padding-bottom: 1rem;
     }
- }
+}
 
- @media (max-width: 576px) {
+@media (max-width: 576px) {
     .display-3 {
         font-size: 3rem;
     }
@@ -379,109 +385,6 @@ hr {
         margin-bottom: 0.5rem;
         padding-bottom: 1rem;
     }
- }
-
-
- //ANIMATIONS
-@-webkit-keyframes pulseInvert {
-    0% {
-        filter:invert(0);
-        -webkit-filter:invert(0);
-        -moz-filter:invert(0);
-        -o-filter:invert(0);
-        -ms-filter:invert(0)
-    }
-    5% {
-        filter:invert(100%);
-        -webkit-filter:invert(100%);
-        -moz-filter:invert(100%);
-        -o-filter:invert(100%);
-        -ms-filter:invert(100%)
-    }
-    100% {
-        filter:invert(0);
-        -webkit-filter:invert(0);
-        -moz-filter:invert(0);
-        -o-filter:invert(0);
-        -ms-filter:invert(0);
-    }
 }
 
-@-moz-keyframes pulseInvert {
-    0% {
-        filter:invert(0);
-        -webkit-filter:invert(0);
-        -moz-filter:invert(0);
-        -o-filter:invert(0);
-        -ms-filter:invert(0);
-    }
-    5% {
-        filter:invert(100%);
-        -webkit-filter:invert(100%);
-        -moz-filter:invert(100%);
-        -o-filter:invert(100%);
-        -ms-filter:invert(100%)
-    }
-    100% {
-        filter:invert(0);
-        -webkit-filter:invert(0);
-        -moz-filter:invert(0);
-        -o-filter:invert(0);
-        -ms-filter:invert(0); 
-    }
-}
 
-@-o-keyframes pulseInvert {
-    0% {
-        filter:invert(0);
-        -webkit-filter:invert(0);
-        -moz-filter:invert(0);
-        -o-filter:invert(0);
-        -ms-filter:invert(0)
-    }
-    5% {
-        filter:invert(100%);
-        -webkit-filter:invert(100%);
-        -moz-filter:invert(100%);
-        -o-filter:invert(100%);
-        -ms-filter:invert(100%)
-    }
-    100% {
-        filter:invert(0);
-        -webkit-filter:invert(0);
-        -moz-filter:invert(0);
-        -o-filter:invert(0);
-        -ms-filter:invert(0);
-    }
-}
-
-@keyframes pulseInvert {
-    0% {
-        filter:invert(0);
-        -webkit-filter:invert(0);
-        -moz-filter:invert(0);
-        -o-filter:invert(0);
-        -ms-filter:invert(0)
-    }
-    5% {
-        filter:invert(100%);
-        -webkit-filter:invert(100%);
-        -moz-filter:invert(100%);
-        -o-filter:invert(100%);
-        -ms-filter:invert(100%)
-    }
-    100% {
-        filter:invert(0);
-        -webkit-filter:invert(0);
-        -moz-filter:invert(0);
-        -o-filter:invert(0);
-        -ms-filter:invert(0);
-    }
-}
-
-.pulseInvert {
-    -webkit-animation-name:pulseInvert;
-    -moz-animation-name:pulseInvert;
-    -o-animation-name:pulseInvert;
-    animation-name:pulseInvert
-}
