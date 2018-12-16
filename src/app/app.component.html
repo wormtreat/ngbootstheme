@@ -231,16 +231,44 @@
     </div>
   </div>  
 
+  <div class="container primary-container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div ng-app>
+            <div class="custom-control custom-radio custom-control-inline">
+
+              
+
+              <input type="radio" ng-model="editor" id="OptionOne" value="OptionOne" name="ChoiceOne" class="custom-control-input" (click)="toggleEditor('optionOne')">
+              <label class="custom-control-label" for="OptionOne">Option One</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" ng-model="editor" id="OptionTwo" value="OptionTwo" name="ChoiceOne" class="custom-control-input" (click)="toggleEditor('optionTwo')">
+              <label class="custom-control-label" for="OptionTwo">Option Two</label>
+            </div>
+            <hr/>
+            
+            <app-application-form *ngIf="showOptionOne"></app-application-form>
+            <app-option-two *ngIf="showOptionTwo"></app-option-two>
+
+            <div id="numberSelect" class="form-group option-two">
+                <select class="custom-select">
+                  <option selected>Open this select menu</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+              
+              <button type="submit" class="btn btn-primary">Sign in</button>
+
+            <hr/>
+          </div>
+        </div>
+    </div>
+  </div>  
 </main>
 
 <footer class="container">
   <p>&copy; Heronerd 2018</p>
 </footer>
-
-
-
-
-
-
-
-

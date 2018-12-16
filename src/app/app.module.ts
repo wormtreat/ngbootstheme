@@ -4,16 +4,21 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { TopnavComponent } from './topnav/topnav.component';
 import { PaginationComponent } from './pagination/pagination.component';
+import { ApplicationFormModule } from './application-form/application-form.module';
+import { OptionTwoComponent } from './option-two/option-two.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     TopnavComponent,
-    PaginationComponent
+    PaginationComponent,
+    OptionTwoComponent
   ],
   imports: [
     BrowserModule,
-    NgbModule
+    NgbModule,
+    ApplicationFormModule
   ],
   providers: [],
   bootstrap: [AppComponent]

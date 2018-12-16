@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+export type EditorType = 'optionOne' | 'optionTwo';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ngBootstrap Theme';
+  editor: EditorType = 'optionOne';
+    
+  get showOptionOne() {
+    return this.editor === 'optionOne';
+  }
+
+  get showOptionTwo() {
+    return this.editor === 'optionTwo';
+  }
+
+  toggleEditor(type: EditorType) {
+    this.editor = type;
+  }
+
 }
