@@ -172,7 +172,6 @@
 
       <div class="col-md-6">
         <hr/>
-        <form>
           <div class="btn-group btn-group-toggle">
             <label class="btn-primary" ngbButtonLabel>
               <input type="checkbox" formControlName="left" ngbButton> Left
@@ -184,7 +183,6 @@
               <input type="checkbox" formControlName="right" ngbButton> Right
             </label>
           </div>
-        </form>
       </div>
 
     </div>
@@ -240,27 +238,19 @@
               
 
               <input type="radio" ng-model="editor" id="OptionOne" value="OptionOne" name="ChoiceOne" class="custom-control-input" (click)="toggleEditor('optionOne')">
-              <label class="custom-control-label" for="OptionOne">Option One</label>
+              <label class="custom-control-label" for="OptionOne">I'm Frank</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
               <input type="radio" ng-model="editor" id="OptionTwo" value="OptionTwo" name="ChoiceOne" class="custom-control-input" (click)="toggleEditor('optionTwo')">
-              <label class="custom-control-label" for="OptionTwo">Option Two</label>
+              <label class="custom-control-label" for="OptionTwo">I'm not Frank</label>
             </div>
             <hr/>
             
             <app-application-form *ngIf="showOptionOne"></app-application-form>
+            <app-option-one *ngIf="showOptionOne"></app-option-one>
             <app-option-two *ngIf="showOptionTwo"></app-option-two>
-
-            <div id="numberSelect" class="form-group option-two">
-                <select class="custom-select">
-                  <option selected>Open this select menu</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
-              </div>
-              
-              <button type="submit" class="btn btn-primary">Sign in</button>
+  
+            <button type="submit" class="btn btn-primary">Sign in</button>
 
             <hr/>
           </div>

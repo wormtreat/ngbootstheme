@@ -9,7 +9,7 @@ export type EditorType = 'optionOne' | 'optionTwo';
 export class AppComponent {
   title = 'ngBootstrap Theme';
   editor: EditorType = 'optionOne';
-    
+
   get showOptionOne() {
     return this.editor === 'optionOne';
   }

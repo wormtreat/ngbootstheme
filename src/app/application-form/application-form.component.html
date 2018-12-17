@@ -1,13 +1,10 @@
-
-<label>
+<form [formGroup]="nameForm">
+  <label>
     Name:
-    <input type="text" [formControl]="name">
+    <input formControlName="firstName">
   </label>
-  
-  <p>
-    Value: {{ name.value }}
-  </p>
-  
-  <p>
-    <button (click)="updateName()">Update Name</button>
-  </p>
+</form>
+
+<p>
+  <button class="btn btn-secondary" (click)="updateName()">I'm Frank</button>
+</p>

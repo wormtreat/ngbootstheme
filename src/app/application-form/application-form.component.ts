@@ -1,20 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
+import { Validators } from '@angular/forms';
+import { FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-application-form',
   templateUrl: './application-form.component.html',
   styleUrls: ['./application-form.component.sass']
 })
-export class ApplicationFormComponent implements OnInit {
-  name = new FormControl('');
-  constructor() { }
+export class ApplicationFormComponent {
+  nameForm = this.fb.group({
+    firstName: ['', Validators.required]
+  });
 
-  ngOnInit() {
-  }
+  constructor(private fb: FormBuilder) { }
 
   updateName() {
-    this.name.setValue('Frank');
+    this.nameForm.patchValue({
+      firstName: 'Frank'
+    });
   }
 
 }
