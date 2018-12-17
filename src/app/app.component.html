@@ -220,6 +220,7 @@
     </div>
   </div>
 
+
   <div class="container primary-container">
     <div class="row">
         <div class="col-sm-12">
@@ -229,31 +230,33 @@
     </div>
   </div>  
 
+  
   <div class="container primary-container">
     <div class="row">
         <div class="col-sm-12">
+
             <div ng-app>
-            <div class="custom-control custom-radio custom-control-inline">
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" ng-model="editor" id="OptionOne" value="OptionOne" name="ChoiceOne" class="custom-control-input" (click)="toggleEditor('optionOne')">
+                <label class="custom-control-label" for="OptionOne">I'm Frank</label>
+              </div>
 
-              
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" ng-model="editor" id="OptionTwo" value="OptionTwo" name="ChoiceOne" class="custom-control-input" (click)="toggleEditor('optionTwo')">
+                <label class="custom-control-label" for="OptionTwo">I'm not Frank</label>
+              </div>
 
-              <input type="radio" ng-model="editor" id="OptionOne" value="OptionOne" name="ChoiceOne" class="custom-control-input" (click)="toggleEditor('optionOne')">
-              <label class="custom-control-label" for="OptionOne">I'm Frank</label>
+              <hr/>
+
+              <app-application-form *ngIf="showOptionOne"></app-application-form>
+              <app-option-one *ngIf="showOptionOne"></app-option-one>
+              <app-option-two *ngIf="showOptionTwo"></app-option-two>
+    
+              <button type="submit" class="btn btn-success">Sign in</button>
+
+              <hr/>
             </div>
-            <div class="custom-control custom-radio custom-control-inline">
-              <input type="radio" ng-model="editor" id="OptionTwo" value="OptionTwo" name="ChoiceOne" class="custom-control-input" (click)="toggleEditor('optionTwo')">
-              <label class="custom-control-label" for="OptionTwo">I'm not Frank</label>
-            </div>
-            <hr/>
-            
-            <app-application-form *ngIf="showOptionOne"></app-application-form>
-            <app-option-one *ngIf="showOptionOne"></app-option-one>
-            <app-option-two *ngIf="showOptionTwo"></app-option-two>
-  
-            <button type="submit" class="btn btn-primary">Sign in</button>
 
-            <hr/>
-          </div>
         </div>
     </div>
   </div>  

@@ -8,6 +8,7 @@ import { FormArray } from '@angular/forms';
   templateUrl: './application-form.component.html',
   styleUrls: ['./application-form.component.sass']
 })
+
 export class ApplicationFormComponent {
   nameForm = this.fb.group({
     firstName: ['', Validators.required]
@@ -20,5 +21,4 @@ export class ApplicationFormComponent {
       firstName: 'Frank'
     });
   }
-
 }

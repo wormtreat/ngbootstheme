@@ -6,6 +6,7 @@ import { FormControl } from '@angular/forms';
   templateUrl: './option-one.component.html',
   styleUrls: ['./option-one.component.sass']
 })
+
 export class OptionOneComponent implements OnInit {
 
   name = new FormControl('');

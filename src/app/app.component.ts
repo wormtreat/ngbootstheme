@@ -6,6 +6,7 @@ export type EditorType = 'optionOne' | 'optionTwo';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
 })
+
 export class AppComponent {
   title = 'ngBootstrap Theme';
   editor: EditorType = 'optionOne';
@@ -21,5 +22,4 @@ export class AppComponent {
   toggleEditor(type: EditorType) {
     this.editor = type;
   }
-
 }
